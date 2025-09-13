@@ -112,17 +112,16 @@ const HomePage = () => {
                 <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
                         <div className="text-center md:text-left">
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight animate-hero-fade-in-up" 
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight animate-hero-fade-in-up"
                                 style={{ animationDelay: '0.2s', color: "#f2aa24", textShadow: "2px 2px 8px rgba(0,0,0,0.6)" }}>
-                                Preserve Sacred <br className="hidden sm:block" /> 
-                                <span className="sm:hidden">Sacred </span>Heritage Forever
+                                Preserve Sacred<br />Heritage Forever
                             </h1>
-                            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-extrabold max-w-lg mx-auto md:mx-0 animate-hero-fade-in-up" 
-                               style={{ animationDelay: '0.4s', color: "#f2aa24", textShadow: "2px 2px 8px rgba(0,0,0,0.6)" }}>
+                            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-extrabold max-w-lg mx-auto md:mx-0 animate-hero-fade-in-up"
+                                style={{ animationDelay: '0.4s', color: "#f2aa24", textShadow: "2px 2px 8px rgba(0,0,0,0.6)" }}>
                                 <b>Experience Sikkim's timeless monasteries through immersive 360° virtual tours, AI-powered storytelling, and secure digital preservation that connects hearts across the globe.</b>
                             </p>
-                            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 animate-hero-fade-in-up justify-center md:justify-start" 
-                                 style={{ animationDelay: '0.6s' }}>
+                            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 animate-hero-fade-in-up justify-center md:justify-start"
+                                style={{ animationDelay: '0.6s' }}>
                                 <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-500 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
                                     <ExploreIcon />Explore Monasteries Now
                                 </a>
@@ -171,8 +170,8 @@ const HomePage = () => {
                             <div className="w-3 sm:w-4 h-1 bg-red-600 rounded-full mx-1"></div>
                             <div className="w-12 sm:w-16 h-1 bg-amber-500 rounded-full"></div>
                         </div>
-                        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700 max-w-3xl mx-auto animate-on-scroll animate-fade-in-up px-4" 
-                           style={{ transitionDelay: '200ms' }}>
+                        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700 max-w-3xl mx-auto animate-on-scroll animate-fade-in-up px-4"
+                            style={{ transitionDelay: '200ms' }}>
                             Experience the perfect blend of ancient heritage and modern technology, creating meaningful connections across cultures and generations.
                         </p>
                     </div>
@@ -236,12 +235,12 @@ const HomePage = () => {
                         <h3 className="text-2xl sm:text-3xl font-bold text-red-950 mb-3 sm:mb-4 animate-on-scroll animate-fade-in-up px-4">
                             Ready to Begin Your Sacred Journey?
                         </h3>
-                        <p className="text-base sm:text-lg text-black max-w-2xl mx-auto mb-6 sm:mb-8 animate-on-scroll animate-fade-in-up px-4" 
-                           style={{ transitionDelay: '200ms' }}>
+                        <p className="text-base sm:text-lg text-black max-w-2xl mx-auto mb-6 sm:mb-8 animate-on-scroll animate-fade-in-up px-4"
+                            style={{ transitionDelay: '200ms' }}>
                             Join thousands of heritage enthusiasts, researchers, and cultural explorers who are preserving and experiencing Sikkim's monastic treasures.
                         </p>
-                        <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-on-scroll animate-fade-in-up px-4" 
-                             style={{ transitionDelay: '400ms' }}>
+                        <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-on-scroll animate-fade-in-up px-4"
+                            style={{ transitionDelay: '400ms' }}>
                             <a href="#" id='buttons' className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950 bg-transparent hover:bg-red-950 hover:text-amber-500 transition-colors">
                                 Start Virtual Tour
                             </a>
