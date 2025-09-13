@@ -79,7 +79,7 @@ const AboutPage = () => {
                 .visible { opacity: 1; transform: none; }
             `}</style>
         
-            <div className="min-h-screen animated-gradient-bg -mt-20 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <div className="min-h-screen animated-gradient-bg w-screen -mt-20 py-20 px-4 sm:px-6  lg:px-8 overflow-hidden">
                 <div className="container mx-auto max-w-6xl">
                     
                     <section className="text-center mb-24">
