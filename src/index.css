@@ -14,11 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: inherit;
-}
+
 a:hover {
   color: #ffcd2a;
 }

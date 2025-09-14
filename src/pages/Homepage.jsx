@@ -122,10 +122,10 @@ const HomePage = () => {
                             </p>
                             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 animate-hero-fade-in-up justify-center md:justify-start"
                                 style={{ animationDelay: '0.6s' }}>
-                                <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-500 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
+                                <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-800 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
                                     <ExploreIcon />Explore Monasteries Now
                                 </a>
-                                <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-500 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
+                                <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-800 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
                                     <HeartIcon />Join the Movement
                                 </a>
                             </div>

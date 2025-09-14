@@ -42,8 +42,8 @@ const Header = () => {
               <Link
                 key={link.text}
                 to={link.href}
-                className="text-sm xl:text-base font-extrabold transition-colors duration-300 hover:opacity-80 whitespace-nowrap"
-                style={{ color: link.active ? "yellow" : "#ffffff" }}
+                className="text-sm xl:text-base  text-amber-700 font-extrabold transition-colors duration-300 hover:opacity-80 whitespace-nowrap"
+                style={{ color: link.active ? "yellow" : "" }}
               >
                 {link.text}
               </Link>

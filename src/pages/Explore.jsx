@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
@@ -45,6 +46,8 @@ const EnhancePlanningIcon = () => <CardIconBase><svg xmlns="http://www.w3.org/20
 
 // --- Main Explore Page Component ---
 export default function Explore() {
+    const navigate = useNavigate();
+
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -66,6 +69,7 @@ export default function Explore() {
             duration: '45 min tour',
             title: 'Rumtek Monastery',
             description: 'A sprawling complex, home to precious Buddhist relics and stunning traditional architecture.',
+            route: '/rumtek-tour'
         },
         {
             tag: 'Scenic',
@@ -74,6 +78,7 @@ export default function Explore() {
             duration: '30 min tour',
             title: 'Enchey Monastery',
             description: 'Established in 1909, offering panoramic views of Gangtok and the surrounding Himalayan peaks.',
+            route: '/enchey-tour'
         },
         {
             tag: 'Historical',
@@ -82,8 +87,18 @@ export default function Explore() {
             duration: '60 min tour',
             title: 'Pemayangtse Monastery',
             description: 'One of Sikkim\'s oldest and most significant monasteries, featuring exquisite murals and ancient scriptures.',
+            route: '/pemayangtse-tour'
         },
     ];
+
+    const handleStartTour = (route) => {
+        navigate(route);
+    };
+
+    const handleFirstTourClick = () => {
+        // Navigate to the first featured tour (Rumtek Monastery)
+        navigate('/rumtek-tour');
+    };
 
     return (
         <>
@@ -131,7 +146,10 @@ export default function Explore() {
                                         <div className="p-6 flex flex-col flex-grow">
                                             <h3 className="text-2xl font-bold text-red-900 mb-2">{tour.title}</h3>
                                             <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{tour.description}</p>
-                                            <button className="w-full flex items-center justify-center bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-600 transition-all duration-300 transform group-hover:scale-105 shadow-md">
+                                            <button 
+                                                onClick={() => handleStartTour(tour.route)}
+                                                className="w-full flex items-center justify-center bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-600 transition-all duration-300 transform group-hover:scale-105 shadow-md"
+                                            >
                                                 <StartTourIcon /> Start Virtual Tour
                                             </button>
                                         </div>
@@ -143,7 +161,7 @@ export default function Explore() {
                         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                             <div className="text-center lg:text-left animate-on-scroll animate-fade-in-left">
                                 <h2 className="text-3xl font-bold text-red-600 mb-4">Plan Your Sacred Journey</h2>
-                                <p className="text-gray-700 mb-8 leading-relaxed">Let us guide you through Sikkim’s spiritual landscape with personalized recommendations, cultural insights, and practical travel information.</p>
+                                <p className="text-gray-700 mb-8 leading-relaxed">Let us guide you through Sikkim's spiritual landscape with personalized recommendations, cultural insights, and practical travel information.</p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                                     <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"><CustomRouteIcon /> Custom Monastery Route</button>
                                     <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><BookGuideIcon /> Book Guided Tour</button>
@@ -187,7 +205,10 @@ export default function Explore() {
                                 Join thousands of cultural explorers who have discovered the beauty and wisdom of Sikkim's monasteries from anywhere in the world.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '400ms' }}>
-                                <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center">
+                                <button 
+                                    onClick={handleFirstTourClick}
+                                    className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"
+                                >
                                     <HeadphoneIcon /> Start Your First Tour
                                 </button>
                                 <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center">
