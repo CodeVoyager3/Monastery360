@@ -241,10 +241,10 @@ const HomePage = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-on-scroll animate-fade-in-up px-4"
                             style={{ transitionDelay: '400ms' }}>
-                            <a href="#" id='buttons' className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950 bg-transparent hover:bg-red-950 hover:text-amber-500 transition-colors">
+                            <a href="#" id='buttons' className="inline-flex items-center bg-red-950 justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950  hover:bg-red-400 hover:text-amber-500 transition-colors">
                                 Start Virtual Tour
                             </a>
-                            <a href="#" id='buttons' className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950 bg-transparent hover:bg-red-950 hover:text-amber-500 transition-colors">
+                            <a href="#" id='buttons' className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950 bg-red-950 hover:bg-red-400 hover:text-amber-500 transition-colors">
                                 Learn Our Story
                             </a>
                         </div>
