@@ -100,7 +100,7 @@ export default function Rumtek() {
                                     ></iframe>
                                 ) : (
                                     <>
-                                        <img src="./rumtek.jpg" alt="360 Preview of Rumtek Monastery" className="w-full h-full object-cover" />
+                                        <img src="/rumtek.jpg" alt="360 Preview of Rumtek Monastery" className="w-full h-full object-cover" />
                                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                                             <button
                                                 onClick={() => setShow360(true)}

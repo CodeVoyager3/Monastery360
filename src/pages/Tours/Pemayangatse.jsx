@@ -93,7 +93,7 @@ export default function Pemayangtse() {
                             <div className="relative w-full h-80 lg:h-96 rounded-2xl shadow-2xl overflow-hidden animate-on-scroll animate-fade-in-right">
                                 {!showStreetView ? (
                                     <>
-                                        <img src="pemayangatse.png" alt="360 Preview of Pemayangtse Monastery" className="w-full h-full object-cover" />
+                                        <img src="/pemayangatse.png" alt="360 Preview of Pemayangtse Monastery" className="w-full h-full object-cover" />
                                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                                             <button
                                                 onClick={() => setShowStreetView(true)}
