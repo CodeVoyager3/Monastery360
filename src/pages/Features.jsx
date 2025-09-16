@@ -193,12 +193,12 @@ export default function Features() {
                 Join our community and start exploring Sikkim’s sacred heritage with cutting-edge technology designed for cultural preservation.
               </p>
               <div className="flex justify-center items-center gap-4 mt-8 animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '400ms' }}>
-                <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg">
+                <a href='/explore' className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg">
                   Start Exploring
-                </button>
-                <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg">
+                </a>
+                <a href='/login' className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg">
                   Access Research Portal
-                </button>
+                </a>
               </div>
             </section>
           </main>

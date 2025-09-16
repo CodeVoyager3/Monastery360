@@ -97,11 +97,7 @@ export default function Contact() {
                                     ))}
                                 </div>
 
-                                <div className="mt-10 flex flex-wrap gap-4">
-                                    <button className="bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-600 transition-colors shadow-lg">Partner With Us</button>
-                                    <button className="bg-red-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-900 transition-colors shadow-lg">Submit Research</button>
-                                    <button className="bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-600 transition-colors shadow-lg">Join Community</button>
-                                </div>
+                                
                             </div>
 
                             {/* Right Column: Send Us a Message Form */}

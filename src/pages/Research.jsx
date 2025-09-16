@@ -145,9 +145,9 @@ export default function Research() {
                                         </div>
                                     </div>
                                 </div>
-                                <button className="mt-6 w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-900 transition-colors duration-300 shadow-md">
+                                <a href='/login' className="mt-6 w-full bg-gray-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-900 transition-colors duration-300 shadow-md">
                                     Explore the Digital Archive
-                                </button>
+                                </a>
                             </div>
                         </section>
                         

@@ -53,11 +53,11 @@ const Header = () => {
           {/* CTA Button - Hidden on mobile */}
           <div className="hidden md:block flex-shrink-0">
             <a
-              href="#"
+              href="/login"
               className="inline-block text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-lg shadow-sm hover:bg-opacity-90 transition-transform transform hover:scale-105 text-sm md:text-base whitespace-nowrap"
               style={{ backgroundColor: "#f2aa24", color: "#4e1314" }}
             >
-              Start Virtual Tour
+              Login / Sign Up
             </a>
           </div>
 

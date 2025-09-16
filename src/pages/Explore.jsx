@@ -161,8 +161,8 @@ export default function Explore() {
                                 <h2 className="text-3xl font-bold text-red-600 mb-4">Plan Your Sacred Journey</h2>
                                 <p className="text-gray-700 mb-8 leading-relaxed">Let us guide you through Sikkim's spiritual landscape with personalized recommendations, cultural insights, and practical travel information.</p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                    <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"><CustomRouteIcon /> Custom Monastery Route</button>
-                                    <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><BookGuideIcon /> Book Guided Tour</button>
+                                    <button className="bg-amber-500  text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"><CustomRouteIcon /> Custom Monastery Route</button>
+                                    <a href='/login' className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><BookGuideIcon /> Book Guided Tour</a>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-on-scroll animate-fade-in-right">
@@ -192,7 +192,7 @@ export default function Explore() {
                                         {item.icon}
                                         <h3 className="font-bold text-xl text-red-600 mb-2">{item.title}</h3>
                                         <p className="text-sm text-gray-600 leading-relaxed mb-6 flex-grow">{item.desc}</p>
-                                        <button className={`${item.buttonColor} text-white font-bold py-2 px-8 rounded-lg hover:bg-opacity-80 transition-all duration-300 shadow-md`}>{item.buttonText}</button>
+                                        <a href='/login' className={`${item.buttonColor} text-white font-bold py-2 px-8 rounded-lg hover:bg-opacity-80 transition-all duration-300 shadow-md`}>{item.buttonText}</a>
                                     </div>
                                 ))}
                             </div>
@@ -203,15 +203,15 @@ export default function Explore() {
                                 Join thousands of cultural explorers who have discovered the beauty and wisdom of Sikkim's monasteries from anywhere in the world.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '400ms' }}>
-                                <button 
+                                <a  href='/explore/rumtek-tour'
                                     onClick={handleFirstTourClick}
                                     className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"
                                 >
                                     <HeadphoneIcon /> Start Your First Tour
-                                </button>
-                                <button className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center">
+                                </a>
+                                <a href='/features' className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center">
                                     Learn About Our Technology
-                                </button>
+                                </a>
                             </div>
                         </section>
                     </main>

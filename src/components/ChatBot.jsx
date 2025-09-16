@@ -24,11 +24,10 @@ const ChatBot = () => {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:5000/api/chat", {
+            const response = await fetch("http://localhost:8080/api/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    model: "gpt-4o-mini",
                     messages: [
                         {
                             role: "system",
@@ -51,18 +50,21 @@ Knowledge base:
                 }),
             });
 
-
-
             const data = await response.json();
-            const botReply =
-                data?.choices?.[0]?.message?.content ||
-                "🙏 Sorry, I couldn’t understand that.";
+            let botReply;
+            if (data?.choices?.[0]?.message?.content) {
+                botReply = data.choices[0].message.content;
+            } else if (data?.error?.message) {
+                botReply = `⚠️ Groq Error: ${data.error.message}`;
+            } else {
+                botReply = "🙏 Sorry, I couldn’t understand that.";
+            }
 
             setMessages((prev) => [...prev, { role: "bot", text: botReply }]);
         } catch (error) {
             setMessages((prev) => [
                 ...prev,
-                { role: "bot", text: "⚠️ Error connecting to OpenAI. Try again later." }
+                { role: "bot", text: "⚠️ Error connecting to Groq. Try again later." }
             ]);
         } finally {
             setLoading(false);
@@ -93,8 +95,8 @@ Knowledge base:
                             <div
                                 key={idx}
                                 className={`p-3 rounded-xl max-w-[85%] shadow-sm ${msg.role === "user"
-                                        ? "bg-red-950 text-white self-end"
-                                        : "bg-gray-100 text-gray-800 self-start"
+                                    ? "bg-red-950 text-white self-end"
+                                    : "bg-gray-100 text-gray-800 self-start"
                                     }`}
                             >
                                 {msg.text}

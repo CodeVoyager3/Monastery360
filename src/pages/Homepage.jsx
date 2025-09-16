@@ -122,10 +122,10 @@ const HomePage = () => {
                             </p>
                             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 animate-hero-fade-in-up justify-center md:justify-start"
                                 style={{ animationDelay: '0.6s' }}>
-                                <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-800 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
+                                <a href="/explore" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-800 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
                                     <ExploreIcon />Explore Monasteries Now
                                 </a>
-                                <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-800 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
+                                <a href="/contact" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-full text-amber-800 bg-amber-500 hover:bg-amber-800 transition-transform transform hover:scale-105">
                                     <HeartIcon />Join the Movement
                                 </a>
                             </div>
@@ -189,7 +189,7 @@ const HomePage = () => {
                                     <li className="flex items-start"><CheckIcon /><span>Intelligent navigation and route planning</span></li>
                                     <li className="flex items-start"><CheckIcon /><span>Easy booking and travel assistance</span></li>
                                 </ul>
-                                <a href="#" className="inline-block w-full text-center bg-amber-500 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-opacity-90 transition-colors text-sm sm:text-base">
+                                <a href="/explore" className="inline-block w-full text-center bg-amber-500 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-opacity-90 transition-colors text-sm sm:text-base">
                                     Start Exploring
                                 </a>
                             </div>
@@ -206,7 +206,7 @@ const HomePage = () => {
                                     <li className="flex items-start"><CheckIcon /><span>Global collaboration platform</span></li>
                                     <li className="flex items-start"><CheckIcon /><span>Data authenticity and verification</span></li>
                                 </ul>
-                                <a href="#" className="inline-block w-full text-center bg-red-950 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-opacity-90 transition-colors text-sm sm:text-base">
+                                <a href="/research" className="inline-block w-full text-center bg-red-950 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-opacity-90 transition-colors text-sm sm:text-base">
                                     Explore Archives
                                 </a>
                             </div>
@@ -223,7 +223,7 @@ const HomePage = () => {
                                     <li className="flex items-start"><CheckIcon /><span>Tourism growth and job creation</span></li>
                                     <li className="flex items-start"><CheckIcon /><span>UNESCO heritage recognition pathway</span></li>
                                 </ul>
-                                <a href="#" className="inline-block w-full text-center bg-orange-500 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-orange-600 transition-colors text-sm sm:text-base">
+                                <a href="/contact" className="inline-block w-full text-center bg-orange-500 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-orange-600 transition-colors text-sm sm:text-base">
                                     Join Community
                                 </a>
                             </div>
@@ -241,10 +241,10 @@ const HomePage = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-on-scroll animate-fade-in-up px-4"
                             style={{ transitionDelay: '400ms' }}>
-                            <a href="#" id='buttons' className="inline-flex items-center bg-red-950 justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950  hover:bg-red-400 hover:text-amber-500 transition-colors">
+                            <a href="/explore" id='buttons' className="inline-flex items-center bg-red-950 justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950  hover:bg-red-400 hover:text-amber-500 transition-colors">
                                 Start Virtual Tour
                             </a>
-                            <a href="#" id='buttons' className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950 bg-red-950 hover:bg-red-400 hover:text-amber-500 transition-colors">
+                            <a href="/about" id='buttons' className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 border-2 border-red-950 text-sm sm:text-base font-medium rounded-full text-red-950 bg-red-950 hover:bg-red-400 hover:text-amber-500 transition-colors">
                                 Learn Our Story
                             </a>
                         </div>

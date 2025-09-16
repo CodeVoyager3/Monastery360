@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const FacebookIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -19,6 +20,18 @@ const InstagramIcon = () => (
 );
 
 const Footer = () => {
+  const exploreLinks = [
+    { text: "Virtual Tours", href: "/explore" },
+    { text: "Features", href: "/features" },
+    { text: "About Us", href: "/about" },
+    { text: "Partnership", href: "/contact" }
+  ];
+  const researchLinks = [
+    { text: "Digital Archive", href: "/research" },
+    { text: "Upload Documents", href: "/research" },
+    { text: "Research Guidelines", href: "/research" },
+    { text: "Collaboration", href: "/contact" }
+  ];
   return (
     <footer className="bg-gradient-to-b from-[#3a2d1d] to-[#2a2116] text-gray-300 pt-16 pb-8 px-6 lg:px-12">
       <div className="container mx-auto max-w-7xl">
@@ -27,12 +40,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo + About */}
           <div className="space-y-3 flex-1 justify-center items-center">
-            
+
             <p className="text-sm leading-relaxed sticky z-10 mb-5 text-gray-400"><i>
               "Preserving Sikkim’s sacred heritage through innovative digital technology, connecting hearts and minds across the globe." ~
-              </i>
+            </i>
             </p>
-            <a href="#" className="ml-13 inline-block">
+            <a href="/" className="ml-13 inline-block">
               <img src="/monastery360logo.png" alt="Monastery360 Logo" className="h-24 w-auto relative z-20" />
             </a>
           </div>
@@ -41,9 +54,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4 border-b border-amber-500/30 pb-2">Explore</h3>
             <ul className="space-y-3">
-              {["Virtual Tours", "Features", "About Us", "Partnership"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-amber-400 transition-colors">{item}</a>
+              {exploreLinks.map((item) => (
+                <li key={item.text}>
+                  <Link to={item.href} className="hover:text-amber-400 transition-colors">
+                    {item.text}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -53,9 +68,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4 border-b border-amber-500/30 pb-2">Research</h3>
             <ul className="space-y-3">
-              {["Digital Archive", "Upload Documents", "Research Guidelines", "Collaboration"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-amber-400 transition-colors">{item}</a>
+              {researchLinks.map((item) => (
+                <li key={item.text}>
+                  <a href={item.href} className="hover:text-amber-400 transition-colors">
+                    {item.text}
+                  </a>
                 </li>
               ))}
             </ul>

@@ -10,12 +10,14 @@ import Rumtek from './pages/Tours/Rumtek';
 import Enchey from "./pages/Tours/Enchey";
 import Pemayangtse from './pages/Tours/Pemayangatse';
 import ChatBot from './components/ChatBot';
+import ScrollToTop from './components/ScrollToTop';
 
 // --- Main App Component ---
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
