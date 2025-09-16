@@ -20,7 +20,7 @@ const contactDetails = [
     { icon: <LocationIcon />, title: 'Visit Us', detail: 'Gangtok, Sikkim, India' },
 ];
 
-// --- Main Contact Page Component ---
+
 export default function Contact() {
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);

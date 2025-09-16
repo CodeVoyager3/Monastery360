@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Rumtek from './pages/Tours/Rumtek';
 import Enchey from "./pages/Tours/Enchey";
 import Pemayangtse from './pages/Tours/Pemayangatse';
+import ChatBot from './components/ChatBot';
 
 // --- Main App Component ---
 
@@ -22,10 +23,11 @@ const App = () => {
         <Route path="/explore" element={<Explore />} />
         <Route path="/research" element={<Research />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/rumtek-tour" element={<Rumtek />} />
-        <Route path="/enchey-tour" element={<Enchey />} />
-        <Route path="/pemayangtse-tour" element={<Pemayangtse />} />
+        <Route path="/explore/rumtek-tour" element={<Rumtek />} />
+        <Route path="/explore/enchey-tour" element={<Enchey />} />
+        <Route path="/explore/pemayangtse-tour" element={<Pemayangtse />} />
       </Routes>
+      <ChatBot />
     </Router>
   );
 };

@@ -4,7 +4,6 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 
-// --- SVG Icon Components ---
 const ClockIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -69,7 +68,7 @@ export default function Explore() {
             duration: '45 min tour',
             title: 'Rumtek Monastery',
             description: 'A sprawling complex, home to precious Buddhist relics and stunning traditional architecture.',
-            route: '/rumtek-tour'
+            route: '/explore/rumtek-tour'
         },
         {
             tag: 'Scenic',
@@ -78,7 +77,7 @@ export default function Explore() {
             duration: '30 min tour',
             title: 'Enchey Monastery',
             description: 'Established in 1909, offering panoramic views of Gangtok and the surrounding Himalayan peaks.',
-            route: '/enchey-tour'
+            route: '/explore/enchey-tour'
         },
         {
             tag: 'Historical',
@@ -87,7 +86,7 @@ export default function Explore() {
             duration: '60 min tour',
             title: 'Pemayangtse Monastery',
             description: 'One of Sikkim\'s oldest and most significant monasteries, featuring exquisite murals and ancient scriptures.',
-            route: '/pemayangtse-tour'
+            route: '/explore/pemayangtse-tour'
         },
     ];
 
@@ -96,8 +95,7 @@ export default function Explore() {
     };
 
     const handleFirstTourClick = () => {
-        // Navigate to the first featured tour (Rumtek Monastery)
-        navigate('/rumtek-tour');
+        navigate('/explore/rumtek-tour');
     };
 
     return (
