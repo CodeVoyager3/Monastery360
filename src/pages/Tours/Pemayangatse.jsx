@@ -1,9 +1,9 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Assuming Header and Footer are in the correct relative path
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-
+import AudioPlayer from '../../components/AudioPlayer';
 
 // --- SVG Icon Components ---
 const BackIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>;
@@ -28,6 +28,7 @@ const featureIcons = {
 
 // --- Main Tour Page Component ---
 export default function Pemayangtse() {
+    const [isAudioPlayerVisible, setIsAudioPlayerVisible] = useState(false);
     const [showStreetView, setShowStreetView] = useState(false);
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -84,6 +85,11 @@ export default function Pemayangtse() {
                                         className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"
                                     >
                                         <Start360Icon /> {showStreetView ? "Hide 360° Tour" : "Start 360° Tour"}
+                                    </button>
+                                    <button
+                                        onClick={() => setIsAudioPlayerVisible(true)} // This still just opens the player
+                                        className="bg-white/80 border-2 border-amber-500 ...">
+                                        <AudioGuideIcon /> Audio Guide
                                     </button>
                                     <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><AudioGuideIcon /> Audio Guide</button>
                                 </div>
@@ -211,6 +217,12 @@ export default function Pemayangtse() {
                         </div>
                     </section>
                 </div>
+                <AudioPlayer
+                    isVisible={isAudioPlayerVisible}
+                    onClose={() => setIsAudioPlayerVisible(false)}
+                    audioSrc="/audio/pemayangtse-guide.mp3" 
+                    title="Pemayangtse Monastery"           
+                />
             </div>
 
             <Footer />

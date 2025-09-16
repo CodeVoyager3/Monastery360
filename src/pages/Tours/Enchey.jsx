@@ -29,6 +29,7 @@ const featureIcons = {
 // --- Main Tour Page Component ---
 export default function Enchey() {
     const [showStreetView, setShowStreetView] = useState(false);
+    const [isAudioPlayerVisible, setIsAudioPlayerVisible] = useState(false);
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -82,6 +83,11 @@ export default function Enchey() {
                                         className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center"
                                     >
                                         <Start360Icon /> {showStreetView ? "Hide 360° Tour" : "Start 360° Tour"}
+                                    </button>
+                                    <button
+                                        onClick={() => setIsAudioPlayerVisible(true)} // This still just opens the player
+                                        className="bg-white/80 border-2 border-amber-500 ...">
+                                        <AudioGuideIcon /> Audio Guide
                                     </button>
                                     <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><AudioGuideIcon /> Audio Guide</button>
                                 </div>
@@ -210,6 +216,12 @@ export default function Enchey() {
                         </div>
                     </section>
                 </div>
+                <AudioPlayer
+                    isVisible={isAudioPlayerVisible}
+                    onClose={() => setIsAudioPlayerVisible(false)}
+                    audioSrc="/audio/enchey-guide.mp3" 
+                    title="Enchey Monastery"           
+                />
             </div>
 
             <Footer />

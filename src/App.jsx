@@ -11,8 +11,10 @@ import Enchey from "./pages/Tours/Enchey";
 import Pemayangtse from './pages/Tours/Pemayangatse';
 import ChatBot from './components/ChatBot';
 import ScrollToTop from './components/ScrollToTop';
+import Tourist from './pages/Dashboards/Tourist';
+import ItineraryDetail from './pages/ItineraryDetail';
 
-// --- Main App Component ---
+
 
 const App = () => {
   return (
@@ -25,9 +27,14 @@ const App = () => {
         <Route path="/explore" element={<Explore />} />
         <Route path="/research" element={<Research />} />
         <Route path="/contact" element={<Contact />} />
+        <Route 
+          path="/explore/my-itinerary/:id" 
+          element={<ItineraryDetail />} 
+        />
         <Route path="/explore/rumtek-tour" element={<Rumtek />} />
         <Route path="/explore/enchey-tour" element={<Enchey />} />
         <Route path="/explore/pemayangtse-tour" element={<Pemayangtse />} />
+        <Route path="/tourist-dashboard" element={<Tourist/>} />
       </Routes>
       <ChatBot />
     </Router>

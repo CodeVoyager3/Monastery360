@@ -78,7 +78,7 @@ Knowledge base:
                 onClick={() => setIsOpen(!isOpen)}
                 className="fixed bottom-8 right-8 z-50 h-20 w-20 rounded-full overflow-hidden transition-transform duration-200 hover:scale-110"
             >
-                <img className="h-full w-full object-cover" src="./bot.png" alt="AI Bot" />
+                <img className="h-full w-full object-cover" src="/bot.png" alt="AI Bot" />
             </button>
 
             {isOpen && (

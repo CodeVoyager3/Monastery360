@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
+import AudioPlayer from '../../components/AudioPlayer';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-// --- SVG Icon Components ---
+
 const BackIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>;
 const LocationPinIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>;
 const ClockIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
@@ -26,7 +26,8 @@ const featureIcons = {
 // --- Main Tour Page Component ---
 export default function Rumtek() {
     const [show360, setShow360] = useState(false);
-
+    const [isAudioPlayerVisible, setIsAudioPlayerVisible] = useState(false);
+    
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -81,7 +82,11 @@ export default function Rumtek() {
                                         className="bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg flex items-center justify-center">
                                         <Start360Icon /> Start 360° Tour
                                     </button>
-                                    <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><AudioGuideIcon /> Audio Guide</button>
+                                    <button
+                                        onClick={() => setIsAudioPlayerVisible(true)}
+                                        className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center">
+                                        <AudioGuideIcon /> Audio Guide
+                                    </button>
                                 </div>
                             </div>
 
@@ -206,8 +211,14 @@ export default function Rumtek() {
                         </div>
                     </section>
                 </div>
+                
+                <AudioPlayer 
+                    isVisible={isAudioPlayerVisible}
+                    onClose={() => setIsAudioPlayerVisible(false)}
+                    audioSrc="/audio/rumtek-guide.mp3"
+                    title="Rumtek Monastery"
+                />
             </div>
-
             <Footer />
         </>
     );
