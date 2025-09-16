@@ -25,11 +25,11 @@ const featureIcons = {
     context: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" /></svg>,
 };
 
-
 // --- Main Tour Page Component ---
 export default function Pemayangtse() {
     const [isAudioPlayerVisible, setIsAudioPlayerVisible] = useState(false);
     const [showStreetView, setShowStreetView] = useState(false);
+    
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -87,11 +87,11 @@ export default function Pemayangtse() {
                                         <Start360Icon /> {showStreetView ? "Hide 360° Tour" : "Start 360° Tour"}
                                     </button>
                                     <button
-                                        onClick={() => setIsAudioPlayerVisible(true)} // This still just opens the player
-                                        className="bg-white/80 border-2 border-amber-500 ...">
-                                        <AudioGuideIcon /> Audio Guide
+                                        onClick={() => setIsAudioPlayerVisible(!isAudioPlayerVisible)}
+                                        className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
+                                    >
+                                        <AudioGuideIcon /> {isAudioPlayerVisible ? "Close Audio Guide" : "Audio Guide"}
                                     </button>
-                                    <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><AudioGuideIcon /> Audio Guide</button>
                                 </div>
                             </div>
 
@@ -119,6 +119,7 @@ export default function Pemayangtse() {
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                         title="Pemayangtse Street View"
+                                        allow="fullscreen"
                                     ></iframe>
                                 )}
                             </div>
@@ -129,7 +130,7 @@ export default function Pemayangtse() {
                             {/* Left: Main Content */}
                             <div className="lg:col-span-2 space-y-12">
                                 <div className="animate-on-scroll animate-fade-in-up">
-                                    <h2 className="text-3xl font-bold text-red-900 mb-6">About Pemayangtse Monastery</h2> {/* Changed title */}
+                                    <h2 className="text-3xl font-bold text-red-900 mb-6">About Pemayangtse Monastery</h2>
                                     <div className="bg-[#fef8e7] border border-amber-300/50 rounded-2xl p-8 shadow-lg">
                                         <h3 className="text-2xl font-bold text-red-800">History & Significance</h3>
                                         <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-amber-500 my-3 rounded-full"></div>
@@ -138,7 +139,7 @@ export default function Pemayangtse() {
                                     </div>
                                 </div>
                                 <div className="animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '150ms' }}>
-                                    <div className="bg-[#fef8e7] border border-amber-300/50 rounded-2xl p-8 shadow-lg">
+                                    <div className="bg-white/50 backdrop-blur-sm border border-amber-300/50 rounded-2xl p-8 shadow-lg">
                                         <h3 className="text-2xl font-bold text-red-800 mb-6">Virtual Tour Features</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                             {tourFeatures.map(feature => (
@@ -160,8 +161,8 @@ export default function Pemayangtse() {
                                 <div className="bg-[#fef8e7] border border-amber-300/50 rounded-2xl p-6 shadow-lg">
                                     <h3 className="text-xl font-bold text-red-900 mb-4">Visit Information</h3>
                                     <ul className="space-y-3 text-gray-700">
-                                        <li className="flex items-center"><LocationPinIcon /> West Sikkim</li> {/* Changed location */}
-                                        <li className="flex items-center"><ClockIcon /> 60 minute virtual tour</li> {/* Changed duration */}
+                                        <li className="flex items-center"><LocationPinIcon /> West Sikkim</li>
+                                        <li className="flex items-center"><ClockIcon /> 60 minute virtual tour</li>
                                         <li className="flex items-center"><CalendarIcon /> Available 24/7</li>
                                         <li className="flex items-center"><UsersIcon /> All experience levels welcome</li>
                                     </ul>
@@ -170,8 +171,8 @@ export default function Pemayangtse() {
                                     <h3 className="text-xl font-bold text-red-900 mb-2">Plan Your Visit</h3>
                                     <p className="text-sm text-gray-600 mb-6">Interested in visiting this monastery in person? Get travel recommendations and cultural insights.</p>
                                     <div className="space-y-3">
-                                        <button className="w-full bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center"><TravelGuideIcon /> Travel Guide</button>
-                                        <button className="w-full bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center"><ContactIcon /> Contact Monastery</button>
+                                        <a href='/login' className="w-full bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center"><TravelGuideIcon /> Travel Guide</a>
+                                        <a href='/contact' className="w-full bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center"><ContactIcon /> Contact Monastery</a>
                                     </div>
                                 </div>
                             </aside>
@@ -189,9 +190,9 @@ export default function Pemayangtse() {
                             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
                                 Continue your spiritual journey with other remarkable monasteries in Sikkim.
                             </p>
-                            <button className="bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md">
+                            <a href='/login' className="bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md">
                                 View All Virtual Tours
-                            </button>
+                            </a>
                         </section>
                     </main>
                 </div>
@@ -208,15 +209,16 @@ export default function Pemayangtse() {
                             generations to come.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '400ms' }}>
-                            <button className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center">
+                            <a href='/login' className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center">
                                 <SendIcon /> Get Started Today
-                            </button>
-                            <button className="bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md flex items-center justify-center">
+                            </a>
+                            <a href='/about' className="bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md flex items-center justify-center">
                                 <HeartIcon /> Learn About Our Mission
-                            </button>
+                            </a>
                         </div>
                     </section>
                 </div>
+                
                 <AudioPlayer
                     isVisible={isAudioPlayerVisible}
                     onClose={() => setIsAudioPlayerVisible(false)}

@@ -32,6 +32,7 @@ export default function AudioPlayer({ isVisible, onClose, audioSrc, title }) {
 
         {/* Audio Element with Controls - WITH COMPREHENSIVE DEBUGGING */}
         <audio
+          autoPlay  
           src={audioSrc}
           controls
           preload="metadata"
@@ -42,7 +43,8 @@ export default function AudioPlayer({ isVisible, onClose, audioSrc, title }) {
             borderRadius: '8px',
             display: 'block',
             visibility: 'visible',
-            opacity: 1,
+            opacity: 100,
+            backgroundColor: 'black',
           }}
           onLoadStart={() => console.log('🎵 Loading audio from:', audioSrc)}
           onLoadedMetadata={() => console.log('✅ Audio metadata loaded successfully')}

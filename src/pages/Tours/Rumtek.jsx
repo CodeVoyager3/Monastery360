@@ -83,9 +83,9 @@ export default function Rumtek() {
                                         <Start360Icon /> Start 360° Tour
                                     </button>
                                     <button
-                                        onClick={() => setIsAudioPlayerVisible(true)}
+                                        onClick={() => setIsAudioPlayerVisible(!isAudioPlayerVisible)}
                                         className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center">
-                                        <AudioGuideIcon /> Audio Guide
+                                        <AudioGuideIcon /> {isAudioPlayerVisible ? "Close Audio Guide" : "Audio Guide"}
                                     </button>
                                 </div>
                             </div>
@@ -102,6 +102,7 @@ export default function Rumtek() {
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                         title="Rumtek Street View"
+                                        allow="fullscreen"
                                     ></iframe>
                                 ) : (
                                     <>
@@ -164,8 +165,8 @@ export default function Rumtek() {
                                     <h3 className="text-xl font-bold text-red-900 mb-2">Plan Your Visit</h3>
                                     <p className="text-sm text-gray-600 mb-6">Interested in visiting this monastery in person? Get travel recommendations and cultural insights.</p>
                                     <div className="space-y-3">
-                                        <button className="w-full bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center"><TravelGuideIcon /> Travel Guide</button>
-                                        <button className="w-full bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center"><ContactIcon /> Contact Monastery</button>
+                                        <a href='/login' className="w-full bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center"><TravelGuideIcon /> Travel Guide</a>
+                                        <a href='/contact' className="w-full bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center"><ContactIcon /> Contact Monastery</a>
                                     </div>
                                 </div>
                             </aside>
@@ -183,9 +184,9 @@ export default function Rumtek() {
                             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
                                 Continue your spiritual journey with other remarkable monasteries in Sikkim.
                             </p>
-                            <button className="bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md">
+                            <a href='/login' className="bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md">
                                 View All Virtual Tours
-                            </button>
+                            </a>
                         </section>
                     </main>
                 </div>
@@ -202,12 +203,12 @@ export default function Rumtek() {
                             generations to come.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '400ms' }}>
-                            <button className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center">
+                            <a href='/login' className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center">
                                 <SendIcon /> Get Started Today
-                            </button>
-                            <button className="bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md flex items-center justify-center">
+                            </a>
+                            <a href='/about' className="bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md flex items-center justify-center">
                                 <HeartIcon /> Learn About Our Mission
-                            </button>
+                            </a>
                         </div>
                     </section>
                 </div>

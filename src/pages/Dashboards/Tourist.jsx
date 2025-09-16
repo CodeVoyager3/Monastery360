@@ -153,7 +153,7 @@ export default function Tourist() {
                 .visible { opacity: 1; transform: none; }
             `}</style>
 
-            <div className="animated-gradient-bg w-screen min-h-screen text-gray-800 overflow-x-hidden">
+            <div className="animated-gradient-bg -mt-20 w-screen min-h-screen text-gray-800 overflow-x-hidden">
                 <div className="container mx-auto px-4 sm:px-6 py-24">
 
                     <header className="text-center max-w-3xl mx-auto mb-16 md:mb-20">

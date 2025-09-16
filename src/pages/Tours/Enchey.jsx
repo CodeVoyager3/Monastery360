@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import AudioPlayer from '../../components/AudioPlayer';
 // Assuming Header and Footer are in the correct relative path
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -30,6 +30,7 @@ const featureIcons = {
 export default function Enchey() {
     const [showStreetView, setShowStreetView] = useState(false);
     const [isAudioPlayerVisible, setIsAudioPlayerVisible] = useState(false);
+    
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -61,7 +62,7 @@ export default function Enchey() {
                 .visible { opacity: 1; transform: none; }
             `}</style>
 
-            <div className="animated-gradient-bg -mt-20 min-h-screen text-gray-800 font-serif overflow-x-hidden"> {/* Changed bg-white to animated-gradient-bg */}
+            <div className="animated-gradient-bg -mt-20 min-h-screen text-gray-800 font-serif overflow-x-hidden">
                 <div className="container mx-auto px-4 sm:px-6 pt-28 pb-16">
 
                     <a href="/explore" className="inline-flex items-center text-amber-700 font-semibold mb-8 hover:underline animate-on-scroll animate-fade-in-down"><BackIcon /> Back to Tours</a>
@@ -85,11 +86,11 @@ export default function Enchey() {
                                         <Start360Icon /> {showStreetView ? "Hide 360° Tour" : "Start 360° Tour"}
                                     </button>
                                     <button
-                                        onClick={() => setIsAudioPlayerVisible(true)} // This still just opens the player
-                                        className="bg-white/80 border-2 border-amber-500 ...">
-                                        <AudioGuideIcon /> Audio Guide
+                                        onClick={() => setIsAudioPlayerVisible(!isAudioPlayerVisible)}
+                                        className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"
+                                    >
+                                        <AudioGuideIcon /> {isAudioPlayerVisible ? "Close Audio Guide" : "Audio Guide"}
                                     </button>
-                                    <button className="bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center"><AudioGuideIcon /> Audio Guide</button>
                                 </div>
                             </div>
 
@@ -117,6 +118,7 @@ export default function Enchey() {
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                         title="Enchey Street View"
+                                        allow="fullscreen"
                                     ></iframe>
                                 )}
                             </div>
@@ -137,7 +139,7 @@ export default function Enchey() {
                                     </div>
                                 </div>
                                 <div className="animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '150ms' }}>
-                                    <div className="bg-[#fef8e7] border border-amber-300/50 rounded-2xl p-8 shadow-lg">
+                                    <div className="bg-white/50 backdrop-blur-sm border border-amber-300/50 rounded-2xl p-8 shadow-lg">
                                         <h3 className="text-2xl font-bold text-red-800 mb-6">Virtual Tour Features</h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                             {tourFeatures.map(feature => (
@@ -169,8 +171,8 @@ export default function Enchey() {
                                     <h3 className="text-xl font-bold text-red-900 mb-2">Plan Your Visit</h3>
                                     <p className="text-sm text-gray-600 mb-6">Interested in visiting this monastery in person? Get travel recommendations and cultural insights.</p>
                                     <div className="space-y-3">
-                                        <button className="w-full bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center"><TravelGuideIcon /> Travel Guide</button>
-                                        <button className="w-full bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center"><ContactIcon /> Contact Monastery</button>
+                                        <a href='/login' className="w-full bg-amber-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md flex items-center justify-center"><TravelGuideIcon /> Travel Guide</a>
+                                        <a href='/contact' className="w-full bg-white/80 border-2 border-amber-500 text-amber-600 font-bold hover:bg-amber-500 hover:text-white py-3 px-4 rounded-lg transition-colors flex items-center justify-center"><ContactIcon /> Contact Monastery</a>
                                     </div>
                                 </div>
                             </aside>
@@ -188,9 +190,9 @@ export default function Enchey() {
                             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
                                 Continue your spiritual journey with other remarkable monasteries in Sikkim.
                             </p>
-                            <button className="bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md">
+                            <a href='/login' className="bg-amber-400 hover:bg-amber-500 text-amber-900 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md">
                                 View All Virtual Tours
-                            </button>
+                            </a>
                         </section>
                     </main>
                 </div>
@@ -207,15 +209,16 @@ export default function Enchey() {
                             generations to come.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-on-scroll animate-fade-in-up" style={{ transitionDelay: '400ms' }}>
-                            <button className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center">
+                            <a href='/login' className="bg-amber-400 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center">
                                 <SendIcon /> Get Started Today
-                            </button>
-                            <button className="bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md flex items-center justify-center">
+                            </a>
+                            <a href='/about' className="bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-md flex items-center justify-center">
                                 <HeartIcon /> Learn About Our Mission
-                            </button>
+                            </a>
                         </div>
                     </section>
                 </div>
+                
                 <AudioPlayer
                     isVisible={isAudioPlayerVisible}
                     onClose={() => setIsAudioPlayerVisible(false)}
