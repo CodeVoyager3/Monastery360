@@ -1,0 +1,118 @@
+.login-link {
+	text-align: center;
+	margin-top: 1rem;
+	color: #007bff;
+	font-size: 1rem;
+	display: block;
+}
+.login-link a {
+	color: #007bff;
+	text-decoration: underline;
+}
+body {
+	font-family: Arial, sans-serif;
+}
+
+
+
+/* Prevent global text color on signup page */
+.signup-root {
+  color: #222 !important;
+}
+
+.signup-root .signup-page {
+	min-height: 100vh;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	background-size: cover;
+	background-position: center;
+	overflow-y: auto;
+	padding-top: 3vh;
+	padding-bottom: 3vh;
+	position: relative;
+}
+
+.signup-root .signup-container {
+	background: rgba(255, 255, 255, 0.97);
+	padding: 2rem 2.5rem 1.2rem 2.5rem;
+	border-radius: 10px;
+	box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+	max-width: 420px;
+	width: 100%;
+	margin-bottom: 2vh;
+	z-index: 2;
+}
+.login-link {
+	text-align: center;
+	margin-top: 1.5rem;
+	color: #007bff;
+	font-size: 1rem;
+	display: block;
+	position: relative;
+	z-index: 2;
+}
+.login-link a {
+	color: #007bff;
+	text-decoration: underline;
+}
+
+.signup-container h1 {
+	margin-bottom: 1.5rem;
+	font-size: 1.7rem;
+	text-align: center;
+}
+
+.signup-container form > div {
+	margin-bottom: 1.1rem;
+}
+
+.signup-container label {
+	display: block;
+	margin-bottom: 0.4rem;
+	font-weight: 500;
+}
+
+.signup-container input,
+.signup-container select {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+	background: #fafafa;
+}
+
+.signup-container button {
+	width: 100%;
+	padding: 0.7rem;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	cursor: pointer;
+	margin-top: 0.5rem;
+	transition: background 0.2s;
+}
+.signup-container button:hover {
+	background: #0056b3;
+}
+
+.login-link {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.signup-blur-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(255,255,255,0.3);
+	backdrop-filter: blur(6px);
+	z-index: 1;
+	pointer-events: none;
+	transition: opacity 0.4s;
+}
